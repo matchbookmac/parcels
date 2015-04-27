@@ -21,8 +21,10 @@ class Parcel
     else
       @cost = distance * 0.25
     end
-    if speed == "fast"
+    if speed == 'fast'
       @cost = @cost * 2.0
+    elsif speed == 'slow'
+      @cost = @cost
     end
     if volume() > 20
       @cost = @cost * 1.5
@@ -42,7 +44,10 @@ class Parcel
 
   define_method(:discount) do |code|
     code_table = {"ABC" => 5.00, "EPICODUS" => 10.0, "CHEAPO" => 1.00}
-    discount = code_table.fetch(code)
-    # @cost = @cost - discount
+    if !(code_table.include?(code))
+      discount = 0.0
+    else
+      discount = code_table.fetch(code)
+    end
   end
 end

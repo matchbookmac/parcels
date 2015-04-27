@@ -1,25 +1,52 @@
 <form action="/parcels">
   <div class="form-group">
-    <label for="height">Height</label>
-    <input id="height" name="height" type="text" class="form-control" required>
-    <label for="width">Width</label>
-    <input id="width" name="width" type="text" class="form-control" required>
-    <label for="length">Length</label>
-    <input id="length" name="length" type="text" class="form-control" required>
-    <label for="distance">Distance</label>
-    <input id="distance" name="distance" type="text" class="form-control" required>
-    <label for="weight">Weight</label>
-    <input id="weight" name="weight" type="text" class="form-control" required>
-    <label for="speed">Speed</label>
-    <input id="speed" name="speed" type="text" class="form-control" required>
-    <label for="discount">Discount</label>
-    <input id="discount" name="discount" type="text" class="form-control" required>
-    <label for="gift-wrap">Would you like gift wrap?</label>
-    <select id="gift-wrap" name="gift-wrap" required>
-      <option value="">Please select</option>
-      <option value="Yes">Yes</option>
-      <option value="No">No</option>
-    </select>
+    <div class='custom-input-group'>
+      <label for="height">Height</label>
+      <input id="height" name="height" type="text" class="form-control" required>
+      <span class="units">inches</span>
     </div>
+    <div class='custom-input-group'>
+      <label for="width">Width</label>
+      <input id="width" name="width" type="text" class="form-control" required>
+      <span class="units">inches</span>
+    </div>
+    <div class='custom-input-group'>
+      <label for="length">Length</label>
+      <input id="length" name="length" type="text" class="form-control" required>
+      <span class="units">inches</span>
+    </div>
+    <div class='custom-input-group'>
+      <label for="distance">Distance</label>
+      <input id="distance" name="distance" type="text" class="form-control" required>
+      <span class="units">parsecs</span>
+    </div>
+    <div class='custom-input-group'>
+      <label for="weight">Weight</label>
+      <input id="weight" name="weight" type="text" class="form-control" required>
+      <span class="units">stone</span>
+    </div>
+    <div class='custom-input-group'>
+      <label for="discount">Discount</label>
+      <input id="discount" name="discount" type="text" class="form-control">
+    </div>
+    <div class='custom-input-group'>
+      <label for="speed">Speed</label>
+      <select id="speed" name="speed" class="custom-select" required>
+        <option value="">Please select</option>
+        <option value="fast">Fast</option>
+        <option value="slow">Slow</option>
+      </select>
+    <span class="units"></span>
+    </div>
+    <div class='custom-input-group'>
+      <label for="gift-wrap">Gift wrap?</label>
+      <select id="gift-wrap" name="gift-wrap" class="custom-select" required>
+        <option value="">Please select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+      <span class="units"></span>
+    </div>
+  </div>
   <button type="submit" class="custom-button">Submit</button>
 </form>

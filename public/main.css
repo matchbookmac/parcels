@@ -7,10 +7,40 @@ body {
   padding: 2em;
   margin: 2em;
   border-radius: 5px;
+  text-align: center;
+}
+
+label {
+  min-width: 100px;
+  max-width: 100px;
 }
 
 input {
   margin-bottom: 1em;
+}
+
+input.form-control {
+  display: inline-block;
+  width: 65%;
+}
+
+.form-group {
+  text-align: left;
+}
+
+.custom-input-group {
+  position: relative;
+}
+
+select.custom-select {
+  display: inline-block;
+  position: absolute;
+  width: 40%
+}
+
+span.units {
+  display: inline-block;
+  font-size: 1em;
 }
 
 .custom-button {
