@@ -4,6 +4,7 @@ class Parcel
     @length = length
     @height = height
     @dimensions = [width, length, height]
+    @cost = 0.00
   end
 
   define_method(:parcel?) do
@@ -15,22 +16,21 @@ class Parcel
   end
 
   define_method(:cost_to_ship) do |distance, weight, speed, gift_wrap|
-    cost = 0.0
     if weight > 2.0
-      cost = distance * 0.50
+      @cost = distance * 0.50
     else
-      cost = distance * 0.25
+      @cost = distance * 0.25
     end
     if speed == "fast"
-      cost = cost * 2.0
+      @cost = @cost * 2.0
     end
     if volume() > 20
-      cost = cost * 1.5
+      @cost = @cost * 1.5
     end
     if gift_wrap == "Yes"
-      cost = cost + surface_area() * 0.01
+      @cost = @cost + surface_area() * 0.01
     end
-    cost
+    @cost
   end
 
   define_method(:surface_area) do
@@ -38,5 +38,11 @@ class Parcel
     face = @height * @width
     side = @height * @length
     (base * 2) + (face * 2) + (side *2)
+  end
+
+  define_method(:discount) do |code|
+    code_table = {"ABC" => 5.00, "EPICODUS" => 10.0, "CHEAPO" => 1.00}
+    discount = code_table.fetch(code)
+    # @cost = @cost - discount
   end
 end

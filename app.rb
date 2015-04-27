@@ -15,7 +15,8 @@ get('/parcels') do
   weight = params.fetch('weight').to_i
   speed = params.fetch('speed')
   gift_wrap = params.fetch('gift-wrap')
+  code = params.fetch('discount')
   parcel = Parcel.new(width, length, height)
-  @shipping_cost = parcel.cost_to_ship(distance, weight, speed, gift_wrap)
+  @shipping_cost = parcel.cost_to_ship(distance, weight, speed, gift_wrap) - parcel.discount(code)
   erb(:parcels)
 end

@@ -11,8 +11,9 @@ describe('The shipping cost path', {:type => :feature}) do
     fill_in('distance', :with => 20)
     fill_in('weight', :with => 20)
     fill_in('speed', :with => 'fast')
+    fill_in('discount', :with => 'EPICODUS')
     find('#gift-wrap').find(:xpath, 'option[2]').select_option()
     click_button('Submit')
-    expect(page).to have_content('It will cost $30.82 to ship your parcel')
+    expect(page).to have_content('It will cost $20.82 to ship your parcel')
   end
 end

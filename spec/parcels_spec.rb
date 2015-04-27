@@ -35,4 +35,11 @@ describe('Parcel') do
       expect(parcel.surface_area()).to(eq(54))
     end
   end
+
+  describe('#discount') do
+    it('will return the discounted amount') do
+      parcel = Parcel.new(3, 3, 3)
+      expect(parcel.discount('ABC')).to(eq(5.00))
+    end
+  end
 end
