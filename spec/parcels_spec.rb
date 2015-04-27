@@ -20,4 +20,10 @@ describe('Parcel') do
       expect(parcel.volume()).to(eq(12))
     end
   end
+  describe('#cost_to_ship') do
+    it('will return the cost of shipping for a parcel based on distance, weight, and speed') do
+      parcel = Parcel.new(3, 3, 3)
+      expect(parcel.cost_to_ship(4.00, 3.00, 'fast')).to(eq(6.00))
+    end
+  end
 end
