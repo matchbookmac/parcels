@@ -10,4 +10,7 @@ class Parcel
     !(@dimensions.include?(0))
   end
 
+  define_method(:volume) do
+    (@width*(@length))*(@height)
+  end
 end
