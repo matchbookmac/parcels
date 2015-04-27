@@ -14,16 +14,25 @@ describe('Parcel') do
     end
 
   end
+
   describe('#volume') do
     it('will return the volume') do
       parcel = Parcel.new(2, 2, 3)
       expect(parcel.volume()).to(eq(12))
     end
   end
+
   describe('#cost_to_ship') do
     it('will return the cost of shipping for a parcel based on distance, weight, and speed') do
       parcel = Parcel.new(3, 3, 3)
-      expect(parcel.cost_to_ship(4.00, 3.00, 'fast')).to(eq(6.00))
+      expect(parcel.cost_to_ship(4.00, 3.00, 'fast', 'No')).to(eq(6.00))
+    end
+  end
+
+  describe('#surface_area') do
+    it('will return the surface area of the parcel') do
+      parcel = Parcel.new(3, 3, 3)
+      expect(parcel.surface_area()).to(eq(54))
     end
   end
 end

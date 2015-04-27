@@ -9,6 +9,10 @@ body {
   border-radius: 5px;
 }
 
+input {
+  margin-bottom: 1em;
+}
+
 .custom-button {
   background: #395D8C;
   color: #ffffff;
