@@ -1,0 +1,21 @@
+body {
+  background: #437353;
+}
+
+.container {
+  background: white;
+  padding: 2em;
+  margin: 2em;
+  border-radius: 5px;
+}
+
+.custom-button {
+  background: #395D8C;
+  color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.custom-button:hover {
+  background: #263F73;
+}
